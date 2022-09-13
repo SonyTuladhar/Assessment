@@ -9,6 +9,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+
+
 public class LoginTest {
 	WebDriver driver;
 
@@ -30,6 +32,14 @@ public class LoginTest {
 		
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		jse.executeScript("scroll(0, 500);");
+		Thread.sleep(1000);
+		
+		AdminObject admin = new AdminObject(driver);
+		admin.adminClick();
+		Thread.sleep(1000);
+		
+		LeaveObject leave = new LeaveObject(driver);
+		leave.leaveClick();
 		Thread.sleep(1000);
 	}
 	
