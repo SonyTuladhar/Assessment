@@ -7,20 +7,18 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class LeaveObject {
+	
 	WebDriver driver;
+	@FindBy(xpath = "//*[@href='/web/index.php/leave/viewLeaveModule']")
+	WebElement leave;
 	
 	public LeaveObject(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//*[@href='/web/index.php/leave/viewLeaveModule']")
-	WebElement leave;
-
-
 	public void leaveClick() {
 		leave.click();;
 	}
 
 }
-
